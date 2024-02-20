@@ -1,11 +1,29 @@
-/*!
-* Start Bootstrap - Agency v7.0.12 (https://startbootstrap.com/theme/agency)
-* Copyright 2013-2023 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-agency/blob/master/LICENSE)
-*/
-//
-// Scripts
-// 
+// Import GenAI SDK (assuming it's included via a CDN)
+// Replace 'YOUR_API_KEY' with your actual API key
+import GenAI from 'https://cdn.genai.ai/sdk/genai-sdk.min.js';
+
+window.addEventListener('DOMContentLoaded', event => {
+    // Initialize GenAI with your API key
+    const genai = new GenAI('YOUR_API_KEY');
+
+    // Function to process image using GenAI
+    const processImage = async (imageUrl) => {
+        try {
+            // Call GenAI API to analyze the image
+            const result = await genai.analyzeImage(imageUrl);
+
+            // Process the result (e.g., display it on the page)
+            console.log('GenAI Analysis Result:', result);
+        } catch (error) {
+            console.error('Error processing image with GenAI:', error);
+        }
+    };
+
+    // Example usage: Process image when the page is loaded
+    processImage('https://example.com/image.jpg');
+});
+
+
 
 window.addEventListener('DOMContentLoaded', event => {
 
